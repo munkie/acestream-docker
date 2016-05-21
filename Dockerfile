@@ -20,6 +20,9 @@ RUN adduser --disabled-password --gecos "" ace
 COPY start.sh /root/
 RUN chmod +x /root/start.sh
 
+# Copy acestream-engine supervisor config
 COPY acestream.conf /etc/supervisor/conf.d/acestream.conf
+# Copy sqlite acestream db with already set age and gender
+COPY torrentstream.sdb /root/.ACEStream/sqlite/torrentstream.sdb
 
 ENTRYPOINT ["/root/start.sh"]

@@ -16,4 +16,4 @@ while [ -z "`netstat -tln | grep 62062`" ]; do
 done
 echo 'Acestream engine started'
 
-exec su -ls "/bin/bash" -c "mkdir -p /home/ace/.local/share; /usr/bin/acestreamplayer $ARGS $FILE" ace
+exec su -ls "/bin/bash" -c "mkdir -p /home/ace/.local/share; /usr/bin/acestreamplayer $@" ace
